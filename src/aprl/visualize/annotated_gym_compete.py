@@ -164,8 +164,10 @@ class AnnotatedGymCompete(gym.Wrapper):
         }
 
         # Text overlay
-        self.font = ImageFont.truetype(f"{font}.ttf", font_size)
-        self.font_bold = ImageFont.truetype(f"{font}bd.ttf", font_size)
+        # self.font = ImageFont.truetype(f"{font}.ttf", font_size)
+        # self.font_bold = ImageFont.truetype(f"{font}bd.ttf", font_size)
+        self.font = ImageFont.load_default()
+        self.font_bold = ImageFont.load_default()
         self.short_labels = short_labels
         self.ypos = ypos
         self.spacing = spacing

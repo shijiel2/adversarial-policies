@@ -106,3 +106,5 @@ MUJOCO_LOG.TXT
 
 # Mac
 *.DS_Store
+
+*.log

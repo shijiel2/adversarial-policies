@@ -156,8 +156,8 @@ def default_score_config():
     num_env = 1  # number of environments to run in parallel
     episodes = 20  # maximum number of episodes to evaluate
     timesteps = None  # maximum number of timesteps to evaluate
-    render = True  # display on screen (warning: slow)
-    videos = False  # generate videos
+    render = False  # display on screen (warning: slow)
+    videos = True  # generate videos
     video_params = {
         "save_dir": None,  # directory to store videos in.
         "single_file": True,  # if False, stores one file per episode
