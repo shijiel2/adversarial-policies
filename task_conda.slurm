@@ -5,7 +5,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=24
 #SBATCH --time=10:00:00
-#SBATCH --mem=64G
+#SBATCH --mem=128G
 #SBATCH --partition=deeplearn
 #SBATCH --gres=gpu:4
 #SBATCH -q gpgpudeeplearn
@@ -36,6 +36,7 @@ echo "Good to go!"
 # Eval policy
 # python -m aprl.score_agent with env_name=multicomp/SumoHumans-v0 agent_a_type='zoo' agent_a_path='1' agent_b_type='ppo2' agent_b_path='/data/gpfs/projects/punim1629/shijie/adversarial-policies/data/baselines/20220705_031902-default/final_model'
 python -m aprl.score_agent with env_name=multicomp/SumoHumans-v0 agent_a_type='zoo' agent_a_path='2' agent_b_type='zoo' agent_b_path='2' 
+# python test.py
 
 
 
