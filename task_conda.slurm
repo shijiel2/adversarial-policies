@@ -21,8 +21,8 @@ module load x11/20190717
 module load anaconda3/2021.11
 export CONDA_ENVS_PATH=/data/gpfs/projects/punim1629/anaconda3/envs
 
-export MUJOCO_PY_MJKEY_PATH=/data/gpfs/projects/punim1629/shijie/adversarial-policies/mujoco/mjkey.txt
-export MUJOCO_PY_MJPRO_PATH=/data/gpfs/projects/punim1629/shijie/adversarial-policies/mujoco/mjpro131
+export MUJOCO_PY_MJKEY_PATH=/data/gpfs/projects/punim1629/shijie/adversarial-policies/mujoco_lin/mjkey.txt
+export MUJOCO_PY_MJPRO_PATH=/data/gpfs/projects/punim1629/shijie/adversarial-policies/mujoco_lin/mjpro131
 
 
 echo "Activate conda env..."
