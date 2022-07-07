@@ -14,7 +14,7 @@ Note the Python version is changed to 3.6.8 instead of the required 3.7. in setu
 `conda install cudatoolkit=10.0.130`\
 `pip install -r requirements-build.txt`\
 `pip install -r requirements_spartan.txt`\
-`pip install -r requirements-dev.txt`
+`pip install -r requirements-dev.txt`\
 `pip install -e .`
 
 4. Should be good to go?<br />
