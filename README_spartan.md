@@ -12,6 +12,7 @@ Note the Python version is changed to 3.6.8 instead of 3.7.* as required in setu
 `conda activate adv_policy`
 
 3. Install libs<br /> 
+Note we use the requirements_spartan.txt to replace the requirements.txt to avoid format issues. The installed packages should be the same.\
 `conda install cudatoolkit=10.0.130`\
 `pip install -r requirements-build.txt`\
 `pip install -r requirements_spartan.txt`\
