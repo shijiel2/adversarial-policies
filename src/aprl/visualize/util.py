@@ -59,6 +59,10 @@ def abbreviate_agent_config(
         prefix = f"Zoo{suffix}"
         if not gym_compete.is_symmetric(env_name):
             prefix += "V" if victim else "O"
+
+        #TODO: agent_path is a number here, this is just a hotfix
+        agent_path = str(agent_path)
+
         assert isinstance(agent_path, str) and len(agent_path) == 1 and agent_path.isnumeric()
         return f"{prefix}{agent_path}"
     elif agent_type == "zero":
@@ -66,9 +70,12 @@ def abbreviate_agent_config(
     elif agent_type == "random":
         return f"Rand{suffix}"
     elif agent_type == "ppo2":
-        components = agent_path.split(os.path.sep)
-        components = components[:-3]  # chop off baselines/*/final_model
-        components = components[components.index("multi_train") :]  # make relative
+        # components = agent_path.split(os.path.sep)
+        # components = components[:-3]  # chop off baselines/*/final_model
+        # components = components[components.index("multi_train") :]  # make relative
+        components = []
+
+        #TODO: why this is always train/1/? 
         sacred_path = os.path.join(
             DATA_LOCATION, *components, "sacred", "train", "1", "config.json"
         )
