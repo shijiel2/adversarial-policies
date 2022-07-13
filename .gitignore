@@ -108,3 +108,5 @@ MUJOCO_LOG.TXT
 *.DS_Store
 
 *.log
+
+exportpaths_remote3.txt
