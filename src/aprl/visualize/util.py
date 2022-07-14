@@ -70,11 +70,10 @@ def abbreviate_agent_config(
     elif agent_type == "random":
         return f"Rand{suffix}"
     elif agent_type == "ppo2":
-        # components = agent_path.split(os.path.sep)
-        # components = components[:-3]  # chop off baselines/*/final_model
-        # components = components[components.index("multi_train") :]  # make relative
-        components = []
-
+        components = agent_path.split(os.path.sep)
+        components = components[:-3]  # chop off baselines/*/final_model
+        components = components[components.index("multi_train") :]  # make relative
+        # components = []
         #TODO: why this is always train/1/? 
         sacred_path = os.path.join(
             DATA_LOCATION, *components, "sacred", "train", "1", "config.json"
