@@ -1,5 +1,5 @@
 #!/bin/bash
-# sinteractive --nodes=1 --ntasks-per-node=1 --cpus-per-task=24 --time=10:00:00 --mem=64G --partition=deeplearn --gres=gpu:4 -q gpgpudeeplearn -A punim1629 -X
+# sinteractive --nodes=1 --ntasks-per-node=1 --cpus-per-task=24 --time=02:00:00 --mem=64G --partition=deeplearn --gres=gpu:4 -q gpgpudeeplearn -A punim1629 -X
 
 echo "Load module..."
 module load gcccore/8.3.0
@@ -23,6 +23,6 @@ echo "Good to go!"
 # python -m aprl.train with env_name=multicomp/SumoHumans-v0 paper
 
 # Eval policy
-python -m aprl.score_agent with env_name=multicomp/SumoHumans-v0 agent_a_type='zoo' agent_a_path='1' agent_b_type='ppo2' agent_b_path='/data/gpfs/projects/punim1629/shijie/adversarial-policies/data/baselines/20220705_031902-default/final_model'
+python -m aprl.score_agent with env_name=multicomp/SumoHumans-v0 agent_a_type='zoo' agent_a_path='1' agent_b_type='ppo2' agent_b_path='/data/gpfs/projects/punim1629/shijie/adversarial-policies/data/baselines/20220714_023311-default/final_model'
 # python -m aprl.score_agent with env_name=multicomp/SumoHumans-v0 agent_a_type="zoo" agent_a_path="2" agent_b_type="zoo" agent_b_path="2" 
 # python test.py

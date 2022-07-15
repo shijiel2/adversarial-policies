@@ -25,7 +25,7 @@ make_configs(multi_train_ex)
 @multi_train_ex.config
 def default_config(train):
     spec = {  # experiment specification
-        "run_kwargs": {"resources_per_trial": {"cpu": math.ceil(train["num_env"] / 2)}},
+        "run_kwargs": {"resources_per_trial": {"cpu": math.ceil(train["num_env"] / 2), "gpu": 0.65}},
         "config": {},
     }
 

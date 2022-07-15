@@ -1,19 +1,20 @@
 #!/bin/bash
-#SBATCH --job-name=task_adv_policy_conda
-#SBATCH --output=task_adv_policy_conda.log
+#SBATCH --job-name=task_adv_policy_conda_2
+#SBATCH --output=task_adv_policy_conda_2.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=24
-#SBATCH --time=10:00:00
-#SBATCH --mem=128G
-#SBATCH --partition=deeplearn
+#SBATCH --time=168:00:00
+#SBATCH --mem=64G
+#SBATCH --partition=gpgpu
+# --partition=deeplearn shortgpgpu
 #SBATCH --gres=gpu:4
-#SBATCH -q gpgpudeeplearn
+#SBATCH -q gpgpumse
+# -q gpgpumse gpgpudeeplearn
 #SBATCH -A punim1629
 #SBATCH --mail-user=404notfxxkingfound@gmail.com
 #SBATCH --mail-type=ALL
 
-# sinteractive --nodes=1 --ntasks-per-node=1 --cpus-per-task=24 --time=01:00:00 --mem=128G --partition=deeplearn --gres=gpu:4 -q gpgpudeeplearn -A punim1629 -X
 
 echo "Load module..."
 module load gcccore/8.3.0
@@ -35,11 +36,11 @@ conda activate adv_policy
 echo "Good to go!"
 # Train adv policy
 # python -m aprl.train with env_name=multicomp/SumoHumans-v0 paper
+# python -m aprl.multi.train with paper
 
 # Eval policy
 # python -m aprl.score_agent with env_name=multicomp/SumoHumans-v0 agent_a_type='zoo' agent_a_path='1' agent_b_type='ppo2' agent_b_path='/data/gpfs/projects/punim1629/shijie/adversarial-policies/data/baselines/20220705_031902-default/final_model'
 python -m aprl.score_agent with env_name=multicomp/SumoHumans-v0 agent_a_type="zoo" agent_a_path="2" agent_b_type="zoo" agent_b_path="2" 
-# python test.py
 
 
 

@@ -17,9 +17,9 @@ Note we use the requirements_spartan.txt to replace the requirements.txt to avoi
 `pip install -r requirements-dev.txt`\
 `pip install -e .`
 
-4. Should be good to go?<br />
-You may want to change the paths in the .slurm as well\
-`sbatch task_conda.slurm`
-
-
+4. Should be good to go?!<br />
+If you want to run the aprl.mutlti.train, remember to adjust cpu and gpu allocations in file "src/aprl/multi/train.py"\
+You may want to change the paths/configs in the .slurm as well\
+`sbatch task_conda.slurm`\
+(Note: For testing the rendering functioin, just run the eval command "python -m aprl.score_agent with env_name=multicomp/SumoHumans-v0 agent_a_type="zoo" agent_a_path="2" agent_b_type="zoo" agent_b_path="2" ". No need to train adv policy.
 
